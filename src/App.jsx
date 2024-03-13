@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import { Link } from "react-router-dom";
 
 function App() {
   const handleAddUser = (event) => {
@@ -22,7 +23,6 @@ function App() {
         console.log(data);
         if (data.insertedId) {
           alert("User added Successfully");
-          form.reset();
         }
       });
   };
@@ -35,8 +35,10 @@ function App() {
         <input type="email" name="email" />
         <br />
         <input type="submit" value="Add User" />
-        <br />
       </form>
+      <Link to={`/users`}>
+        <button>go Users</button>
+      </Link>
     </>
   );
 }
